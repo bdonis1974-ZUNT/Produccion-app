@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Producción</title>
+
     <style>
         body {
             font-family: Arial;
@@ -61,10 +62,10 @@
 <h1>📦 Producción</h1>
 
 <div class="form-box">
-/add
-    Código: <input type="text" name="codigo">
-    <button type="submit">Agregar</button>
-</form>
+    <form method="post" action="/add">
+        Código: <input type="text" name="codigo">
+        <button type="submit">Agregar</button>
+    </form>
 </div>
 
 <hr>
@@ -78,15 +79,15 @@
         {{item.estado}}
     </div>
 
-    /next/{{loop.index0}}
+    <a href="/next/{{loop.index0}}">
         ➡️ Siguiente proceso
     </a>
 
     <h4>Historial:</h4>
     <ul>
-    {% for h in item.historial %}
+        {% for h in item.historial %}
         <li>{{h}}</li>
-    {% endfor %}
+        {% endfor %}
     </ul>
 
 </div>
