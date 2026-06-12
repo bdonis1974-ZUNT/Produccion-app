@@ -1,76 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Producción</title>
-
-<style>
-body { font-family: Arial; background: #f4f6f8; padding:20px; }
-h1 { text-align:center; }
-
-.form-box { text-align:center; margin-bottom:20px; }
-
-.card {
-    background:white;
-    padding:15px;
-    margin:10px auto;
-    width:300px;
-    border-radius:8px;
-    box-shadow:0px 2px 8px rgba(0,0,0,0.1);
-}
-
-button {
-    padding:8px;
-    background:blue;
-    color:white;
-    border:none;
-}
-
-a {
-    display:inline-block;
-    padding:6px;
-    background:green;
-    color:white;
-    text-decoration:none;
-}
-
-.CORTE {color:red;}
-.COSTURA {color:orange;}
-.INSPECCION {color:purple;}
-.EMPAQUE {color:blue;}
-.COMPLETO {color:green;}
-</style>
-
-</head>
-
-<body>
-
-<h1>📦 Producción</h1>
-
 <div class="form-box">
-
+ 
 /add
     Código: <input name="codigo" required>
     <button type="submit">Agregar</button>
 </form>
-
+ 
 </div>
-
+ 
 <hr>
-
+ 
 {% for item in data %}
 <div class="card">
 <h3>{{item[1]}}</h3>
-
+ 
 <div class="{{item[2]}}">
 {{item[2]}}
 </div>
-
+ 
 /next/{{item[0]}}
 ➡️ Siguiente
 </a>
-
+ 
 </div>
 {% endfor %}
-
-</body>
-</html>
+ 
