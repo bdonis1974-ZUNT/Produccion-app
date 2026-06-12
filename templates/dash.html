@@ -1,6 +1,6 @@
 <h1>Producción</h1>
 
-/add
+<form method="POST" action="/add">
     Código: <input type="text" name="codigo">
     <button type="submit">Agregar</button>
 </form>
@@ -12,7 +12,7 @@
     <b>{{item.codigo}}</b><br>
     Estado: {{item.estado}}<br>
 
-    /next/{{loop.index0}}➡️ Siguiente proceso</a>
+    <a href="/next/{{loop.index0}}">➡️ Siguiente proceso</a>
 
     <h4>Historial:</h4>
     <ul>
