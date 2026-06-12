@@ -1,25 +1,24 @@
 <h1>Producción</h1>
 
 /add
-Código: <input name="codigo">
-<button type="submit">Agregar</button>
+    Código: <input name="codigo">
+    <button type="submit">Agregar</button>
 </form>
 
 <hr>
 
 {% for item in data %}
 <div style="border:1px solid black; padding:10px; margin:10px;">
-<b>{{item.codigo}}</b><br>
-Estado: {{item.estado}}<br>
+    <b>{{item.codigo}}</b><br>
+    Estado: {{item.estado}}<br>
 
-/next/{{loop.index0}}➡️ Siguiente proceso</a>
+    /next/{{loop.index0}}➡️ Siguiente proceso</a>
 
-<h4>Historial:</h4>
-<ul>
-{% for h in item.historial %}
-<li>{{h}}</li>
-{% endfor %}
-</ul>
-
+    <h4>Historial:</h4>
+    <ul>
+    {% for h in item.historial %}
+        <li>{{h}}</li>
+    {% endfor %}
+    </ul>
 </div>
 {% endfor %}
