@@ -46,4 +46,3 @@ def add():
 
 if __name__=='__main__':
     init()
-    app.run()
