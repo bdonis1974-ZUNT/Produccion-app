@@ -20,7 +20,6 @@
 
         input {
             padding: 8px;
-            font-size: 16px;
         }
 
         button {
@@ -28,7 +27,6 @@
             background: #007bff;
             color: white;
             border: none;
-            cursor: pointer;
         }
 
         .card {
@@ -40,11 +38,6 @@
             box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
         }
 
-        .estado {
-            font-weight: bold;
-            padding: 5px;
-        }
-
         .CORTE { color: red; }
         .COSTURA { color: orange; }
         .INSPECCION { color: purple; }
@@ -54,11 +47,11 @@
         a {
             display: inline-block;
             margin-top: 10px;
-            padding: 6px 10px;
+            padding: 6px;
             background: green;
             color: white;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -81,7 +74,7 @@
 
     <h3>{{item.codigo}}</h3>
 
-    <div class="estado {{item.estado}}">
+    <div class="{{item.estado}}">
         {{item.estado}}
     </div>
 
