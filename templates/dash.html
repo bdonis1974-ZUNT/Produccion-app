@@ -1,12 +1,25 @@
+<h1>Producción</h1>
 
-<h1>Panel</h1>
-<form method=post action=/add>
-Cliente:<input name=client>
-Producto:<input name=product>
-Cantidad:<input name=qty>
+/add
+Código: <input name="codigo">
 <button>Agregar</button>
 </form>
 
-{% for o in orders %}
-<div>{{o['client']}} - {{o['product']}} - {{o['qty']}} ({{o['status']}})</div>
+<hr>
+
+{% for item in data %}
+<div style="border:1px solid black; padding:10px; margin:10px;">
+<b>{{item.codigo}}</b><br>
+Estado: {{item.estado}}<br>
+
+/next/{{loop.index0}}➡️ Siguiente proceso</a>
+
+<h4>Historial:</h4>
+<ul>
+{% for h in item.historial %}
+<li>{{h}}</li>
+{% endfor %}
+</ul>
+
+</div>
 {% endfor %}
