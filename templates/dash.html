@@ -1,18 +1,93 @@
-<h1>Producción</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Producción</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 20px;
+        }
 
-<form method="POST" action="/add">
+        h1 {
+            text-align: center;
+        }
+
+        .form-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 10px auto;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .estado {
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .CORTE { color: red; }
+        .COSTURA { color: orange; }
+        .INSPECCION { color: purple; }
+        .EMPAQUE { color: blue; }
+        .COMPLETO { color: green; }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 10px;
+            background: green;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📦 Producción</h1>
+
+<div class="form-box">
+/add
     Código: <input type="text" name="codigo">
     <button type="submit">Agregar</button>
 </form>
+</div>
 
 <hr>
 
 {% for item in data %}
-<div style="border:1px solid black; padding:10px; margin:10px;">
-    <b>{{item.codigo}}</b><br>
-    Estado: {{item.estado}}<br>
+<div class="card">
 
-    <a href="/next/{{loop.index0}}">➡️ Siguiente proceso</a>
+    <h3>{{item.codigo}}</h3>
+
+    <div class="estado {{item.estado}}">
+        {{item.estado}}
+    </div>
+
+    /next/{{loop.index0}}
+        ➡️ Siguiente proceso
+    </a>
 
     <h4>Historial:</h4>
     <ul>
@@ -20,5 +95,9 @@
         <li>{{h}}</li>
     {% endfor %}
     </ul>
+
 </div>
 {% endfor %}
+
+</body>
+</html>
